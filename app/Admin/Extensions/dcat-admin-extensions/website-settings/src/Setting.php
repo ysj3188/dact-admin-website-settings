@@ -18,9 +18,9 @@ class Setting extends Form
     {
         // dump($input);
         // return $this->error('Your error message.');
-        logger($input);
+
         $res = Model\Setting::find(1)->update($input);
-        logger($res);
+       
         if ($res) {
             $resulf = $this->success('更新成功', '/setting');
         } else {
