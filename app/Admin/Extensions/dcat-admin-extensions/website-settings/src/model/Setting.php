@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Extension\WebsiteSettings\Model;
+namespace Dcat\Admin\Extension\WebsiteSettings\Model;
 
 use Dcat\Admin\Traits\HasDateTimeFormatter;
 use Illuminate\Database\Eloquent\Model;

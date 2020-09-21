@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Admin\Extension\WebsiteSettings\Repositories;
+namespace Dcat\Admin\Extension\WebsiteSettings\Repositories;
 
-use App\Models\Setting as Model;
+use Dcat\Admin\Extension\WebsiteSettings\Model\Setting as Model;
 use Dcat\Admin\Repositories\EloquentRepository;
 
 class Setting extends EloquentRepository

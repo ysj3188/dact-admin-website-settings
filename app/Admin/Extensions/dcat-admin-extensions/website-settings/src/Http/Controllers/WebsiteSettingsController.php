@@ -2,17 +2,17 @@
 
 namespace Dcat\Admin\Extension\WebsiteSettings\Http\Controllers;
 
-use App\Admin\Repositories\Setting;
-use Dcat\Admin\Form;
+use Dcat\Admin\Extension\WebsiteSettings\Model\Setting as Model;
 use Dcat\Admin\Layout\Content;
 use Dcat\Admin\Widgets\Card;
+use Dcat\Admin\Widgets\Form;
 use Illuminate\Routing\Controller;
 
 class WebsiteSettingsController extends Controller
 {
     public function index(Content $content)
     {
-        return Form::make(new Setting(), function (Form $form) {
+        return Form::make(new Model(), function (Form $form) {
             $form->title('网站设置');
 
             $form->display('id');
