@@ -3,6 +3,7 @@
 namespace App\Admin\Extension\WebsiteSettings;
 
 use Dcat\Admin\Widgets\Form;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Response;
 
 class Setting extends Form
@@ -16,15 +17,13 @@ class Setting extends Form
      */
     public function handle(array $input)
     {
-        // dump($input);
-        // return $this->error('Your error message.');
 
-        $res = Model\Setting::where('id',1)->update($input);
+        $res = Model\Setting::where('id', 1)->update($input);
 
         if ($res) {
-            $resulf = $this->success('更新成功', '/setting');
+            $resulf = $this->success('更新成功', '/website-settings');
         } else {
-            $resulf = $this->error('更新失败', '/setting');
+            $resulf = $this->error('更新失败', '/website-settings');
         }
 
         return $resulf;
@@ -38,7 +37,7 @@ class Setting extends Form
         $this->confirm('您确定要提交表单吗', 'content');
 
         $this->text('name', '网站名称')->required();
-//        $this->email('email')->rules('email');
+
         $this->url('url', '网站地址')->rules('url')->required();
         $this->image('logo', '网站logo');
         $this->editor('copyright', '网站版权')->required();
@@ -51,12 +50,16 @@ class Setting extends Form
      */
     public function default()
     {
-        $res = Model\Setting::where('id',1)->first();
-        return [
-         'name' => $res->name,
-          'url' => $res->url,
-          'logo' => $res->logo,
-          'copyright' =>$res->copyright,
-        ];
+        $res = Model\Setting::where('id', 1)->first();
+
+        if ($res)
+            return [
+                'name' => $res->name,
+                'url' => $res->url,
+                'logo' =>$res->logo?$res->getImage() :null,
+                'copyright' => $res->copyright,
+            ];
+        else
+            return [];
     }
 }
