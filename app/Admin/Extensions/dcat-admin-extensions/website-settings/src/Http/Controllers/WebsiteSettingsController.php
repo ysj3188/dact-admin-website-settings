@@ -29,6 +29,6 @@ class WebsiteSettingsController extends Controller
     {
         return $content
             ->title('网站设置')
-            ->body(new Card(new \App\Admin\Extension\WebsiteSettings\Setting()));
+            ->body(new Card(new \Dcat\Admin\Extension\WebsiteSettings\Setting()));
     }
 }
