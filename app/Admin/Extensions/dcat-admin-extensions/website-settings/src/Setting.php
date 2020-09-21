@@ -33,7 +33,7 @@ class Setting extends Form
      */
     public function form()
     {
-        
+
 //        $this->confirm('您确定要提交表单吗', 'content');
 
         $this->text('name', '网站名称')->required();
