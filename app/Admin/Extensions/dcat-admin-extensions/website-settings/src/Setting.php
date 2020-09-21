@@ -43,8 +43,10 @@ class Setting extends Form
 
         $this->url('url', '网站地址')->rules('url')->required();
         $this->image('logo', '网站logo')
-            ->accept('jpg,png,gif,jpeg', 'image/*')
-            ->maxSize(2048);
+            ->name('logo.png')
+            ->accept('png')
+            ->maxSize(2048)
+            ->autoUpload();
         $this->editor('copyright', '网站版权')->required();
     }
 
