@@ -20,7 +20,7 @@ class Setting extends Form
         // return $this->error('Your error message.');
 
         $res = Model\Setting::find(1)->update($input);
-       
+
         if ($res) {
             $resulf = $this->success('更新成功', '/setting');
         } else {
