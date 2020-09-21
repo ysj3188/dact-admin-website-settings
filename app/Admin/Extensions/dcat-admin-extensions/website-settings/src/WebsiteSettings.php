@@ -12,9 +12,9 @@ class WebsiteSettings extends Extension
 
     protected $composer = __DIR__.'/../composer.json';
 
-//    protected $assets = __DIR__.'/../resources/assets';
+    protected $assets = __DIR__.'/../resources/assets';
 
-    protected $views = __DIR__.'/../resources/views';
+//    protected $views = __DIR__.'/../resources/views';
 
 //    protected $lang = __DIR__.'/../resources/lang';
 

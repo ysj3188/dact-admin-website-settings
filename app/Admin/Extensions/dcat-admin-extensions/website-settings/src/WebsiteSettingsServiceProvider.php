@@ -17,9 +17,9 @@ class WebsiteSettingsServiceProvider extends ServiceProvider
             $this->loadViewsFrom($views, WebsiteSettings::NAME);
         }
 
-        if ($lang = $extension->lang()) {
-            $this->loadTranslationsFrom($lang, WebsiteSettings::NAME);
-        }
+//        if ($lang = $extension->lang()) {
+//            $this->loadTranslationsFrom($lang, WebsiteSettings::NAME);
+//        }
 
         if ($migrations = $extension->migrations()) {
             $this->loadMigrationsFrom($migrations);
