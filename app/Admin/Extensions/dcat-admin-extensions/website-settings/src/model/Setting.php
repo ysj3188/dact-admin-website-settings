@@ -11,6 +11,7 @@ class Setting extends Model
 {
     use HasDateTimeFormatter;
     protected $table = 'settings';
+    protected $fillable  = ['name','logo','url','copyright'];
 
 
     // 定义一个public方法访问图片或文件

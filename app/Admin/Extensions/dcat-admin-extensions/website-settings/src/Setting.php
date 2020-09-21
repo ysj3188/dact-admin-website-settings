@@ -16,9 +16,11 @@ class Setting extends Form
      */
     public function handle(array $input)
     {
-
-        $res = Model\Setting::where('id', 1)->update($input);
-
+        $setting = Model\Setting::find(1);
+        if ($setting)
+            $res = $setting->update($input);
+        else
+            $res = Model\Setting::create($input);
         if ($res) {
             $resulf = $this->success('更新成功', '/website-settings');
         } else {
@@ -39,7 +41,9 @@ class Setting extends Form
         $this->text('name', '网站名称')->required();
 
         $this->url('url', '网站地址')->rules('url')->required();
-        $this->image('logo', '网站logo');
+        $this->image('logo', '网站logo')
+            ->accept('jpg,png,gif,jpeg', 'image/*')
+            ->maxSize(2048);
         $this->editor('copyright', '网站版权')->required();
     }
 
@@ -56,7 +60,7 @@ class Setting extends Form
             return [
                 'name' => $res->name,
                 'url' => $res->url,
-                'logo' =>$res->logo?$res->getImage() :null,
+                'logo' => $res->logo ? $res->getImage() : null,
                 'copyright' => $res->copyright,
             ];
         else
