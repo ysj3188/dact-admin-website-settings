@@ -51,9 +51,12 @@ class Setting extends Form
      */
     public function default()
     {
+        $res = Model\Setting::where('id',1)->first();
         return [
-//            'name' => 'John Doe',
-//            'email' => 'John.Doe@gmail.com',
+         'name' => $res->name,
+          'url' => $res->url,
+          'logo' => $res->logo,
+          'copyright' =>$res->copyright,
         ];
     }
 }
