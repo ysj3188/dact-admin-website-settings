@@ -1,0 +1,26 @@
+{
+    "name": "ysj3188/website-settings",
+    "description": "description...",
+    "type": "library",
+    "keywords": ["dcat-admin", "extension"],
+    "homepage": "https://github.com/dcat-admin-extensions/website-settings",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ysj",
+            "email": "1191191880@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "dcat/laravel-admin": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dcat\\Admin\\Extension\\WebsiteSettings\\": "src/"
+        },
+         "files": [
+            "src/bootstrap.php"
+        ]
+    }
+}
