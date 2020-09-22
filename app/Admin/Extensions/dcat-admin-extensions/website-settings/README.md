@@ -4,7 +4,7 @@
 
 安装命令:
 
-`composer require ysj3188/dcat-admin-website-settings`
+`composer require ysj3188/website-settings`
 
 发布静态资源
 
