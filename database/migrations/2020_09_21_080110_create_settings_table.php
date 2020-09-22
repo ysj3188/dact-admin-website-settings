@@ -15,10 +15,10 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name',50);
-            $table->string('url',255);
-            $table->string('logo',255);
-            $table->string('copyright',255);
+            $table->string('name',50)->nullable();
+            $table->string('url',255)->nullable();
+            $table->string('logo',255)->nullable();
+            $table->string('copyright',255)->nullable();
             $table->timestamps();
         });
     }

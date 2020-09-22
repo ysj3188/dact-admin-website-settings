@@ -20,15 +20,15 @@
 
 使用前进行数据库迁移，数据库迁移文件在database目录下的migrations里，建立settings表
 
-需要设置config/filesystems中添加别名为admin的disk，网站logo是上传至admin存储中
+需要设置config/filesystems中添加别名为admin的disk，修改`config.admin.upload.disk`为`admin`,网站logo是上传至admin存储中
 
 最后：在
 `app\Providers\AppService\Provider.php`文件的`register`方法中加入如下代码
 
 ```
-         $name = DB::table('settings')->find(1)->name;
+         $name = \Illuminate\Support\Facades\DB::table('settings')->find(1)->name;
          config([
-             'admin.logo' => '<img src="/uploads/images/logo.png" width="35"> &nbsp;' . $name,
-             'admin.name'=>$name
+              'admin.logo' => '<img src="/uploads/images/logo.png" width="35"> &nbsp;' . $name,
+              'admin.name'=>$name
          ]);
 ```
