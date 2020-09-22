@@ -1,9 +1,9 @@
 {
-    "name": "ysj3188/ws",
+    "name": "ysj3188/website-settings",
     "description": "description...",
     "type": "library",
     "keywords": ["dcat-admin", "extension"],
-    "homepage": "https://github.com/ysj3188/ws.git",
+    "homepage": "https://github.com/ysj3188/dact-admin-website-settings.git",
     "license": "MIT",
     "authors": [
         {

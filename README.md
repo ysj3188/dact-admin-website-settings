@@ -6,10 +6,6 @@
 
 `composer require ysj3188/website-settings`
 
-发布静态资源
-
-`php artisan vendor:publish --provider=Dcat\Admin\Extension\WebsiteSettings`
-
 
 导入：
 
